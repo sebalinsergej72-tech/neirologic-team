@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://neirologic.team"),
+  metadataBase: new URL("https://xn--c1adkchdlkbr.xn--p1ai"),
   title: "Neirologic Team — Создаём сайты, ботов и веб-приложения под ключ",
   description:
     "Разработка сайтов, веб-приложений, Telegram-ботов, автоматизация бизнеса и внедрение ИИ. От заявки до запуска — от 2 недель. Бесплатная консультация.",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://neirologic.team",
+    url: "https://нейрологик.рф",
     siteName: "Neirologic Team",
     title: "Neirologic Team — Создаём сайты, ботов и веб-приложения под ключ",
     description:

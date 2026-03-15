@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neirologic.team/sitemap.xml
+Sitemap: https://xn--c1adkchdlkbr.xn--p1ai/sitemap.xml
