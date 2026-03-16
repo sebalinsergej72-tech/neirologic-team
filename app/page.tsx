@@ -9,10 +9,22 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingTelegram from "@/components/FloatingTelegram";
+import {
+  OrganizationJsonLd,
+  WebSiteJsonLd,
+  ServicesJsonLd,
+  FAQJsonLd,
+  BreadcrumbJsonLd,
+} from "@/components/JsonLd";
 
 export default function Home() {
   return (
     <>
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
+      <ServicesJsonLd />
+      <FAQJsonLd />
+      <BreadcrumbJsonLd />
       <Header />
       <main>
         <Hero />

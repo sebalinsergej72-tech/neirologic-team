@@ -67,7 +67,7 @@ export default function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav aria-label="Основная навигация" className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <button
               key={link.href}
