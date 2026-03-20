@@ -141,7 +141,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0"
     >
       <AnimatedBackground />
 
@@ -175,7 +175,7 @@ export default function Hero() {
         >
           Создаём сайты, веб-приложения, Telegram-ботов и внедряем ИИ в бизнес.
           <br className="hidden md:block" />
-          <span className="text-white font-medium">От заявки до запуска — от 2 недель.</span>
+          <span className="text-white font-medium">От заявки до запуска — от 3 дней.</span>
         </motion.p>
 
         {/* Service tags */}

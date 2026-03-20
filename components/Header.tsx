@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#services", label: "Услуги" },
@@ -58,10 +59,14 @@ export default function Header() {
           onClick={() => scrollTo("#hero")}
           className="flex items-center gap-2.5 group"
         >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--color-accent-blue)] to-[var(--color-accent-purple)] flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-[var(--color-accent-blue)]/20 group-hover:shadow-[var(--color-accent-blue)]/40 transition-shadow">
-            N
-          </div>
-          <span className="text-base font-bold gradient-text hidden sm:block">
+          <Image
+            src="/logo-icon.png"
+            alt="Neirologic"
+            width={52}
+            height={52}
+            style={{ objectFit: "contain" }}
+          />
+          <span className="hidden sm:block text-lg font-bold gradient-text">
             neirologic
           </span>
         </button>

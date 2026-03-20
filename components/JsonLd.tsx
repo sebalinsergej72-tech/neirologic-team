@@ -7,7 +7,7 @@ export function OrganizationJsonLd() {
     url: "https://xn--c1adkchdlkbr.xn--p1ai",
     logo: "https://xn--c1adkchdlkbr.xn--p1ai/favicon.svg",
     description:
-      "Разработка сайтов, веб-приложений, Telegram-ботов, автоматизация бизнеса и внедрение ИИ. От заявки до запуска — от 2 недель.",
+      "Разработка сайтов, веб-приложений, Telegram-ботов, автоматизация бизнеса и внедрение ИИ. От заявки до запуска — от 3 дней.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -119,7 +119,7 @@ export function FAQJsonLd() {
     {
       question: "Какие сроки разработки?",
       answer:
-        "Telegram-бот — от 1 недели. Лендинг — от 2 недель. Веб-приложение — от 4 недель. Сложный SaaS — от 2 месяцев.",
+        "Telegram-бот — от 3 дней. Лендинг — от 3 дней. Веб-приложение — от 2 недель. Сложный SaaS — от 2 месяцев.",
     },
     {
       question: "Работаете по договору?",
