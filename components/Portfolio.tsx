@@ -35,6 +35,17 @@ const projects = [
     accentColor: "text-sky-400",
     url: "https://t.me/vitessbot_bot",
   },
+  {
+    title: "МебельФикс",
+    type: "Веб-сайт",
+    description:
+      "Сайт мебельной мастерской — ремонт, перетяжка и реставрация мебели. Каталог услуг, калькулятор стоимости, онлайн-запись и галерея работ.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Railway"],
+    color: "from-amber-500/20 to-orange-500/20",
+    accentColor: "text-amber-400",
+    url: "https://xn--e1afkchfbldb.xn--p1ai",
+    image: "/mebelfix.png",
+  },
 ];
 
 export default function Portfolio() {
