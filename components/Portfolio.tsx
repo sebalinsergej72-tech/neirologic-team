@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import DeviceMockup from "./DeviceMockup";
 
 const projects = [
   {
@@ -13,6 +14,8 @@ const projects = [
     accentColor: "text-emerald-400",
     url: "https://www.всесошлось.рф",
     image: "/vsesoshlos.png",
+    video: "/videos/vsesoshlos-desktop.mp4",
+    videoMobile: "/videos/vsesoshlos-mobile.mp4",
   },
   {
     title: "Polymarket Smart Copy Bot",
@@ -24,6 +27,8 @@ const projects = [
     accentColor: "text-violet-400",
     beta: true,
     image: "/polymarket-bot.png",
+    video: "/videos/polymarket-desktop.mp4",
+    videoMobile: "/videos/polymarket-mobile.mp4",
   },
   {
     title: "VitessBot",
@@ -45,6 +50,8 @@ const projects = [
     accentColor: "text-amber-400",
     url: "https://xn--e1afkchfbldb.xn--p1ai",
     image: "/mebelfix.png",
+    video: "/videos/mebelfix-desktop.mp4",
+    videoMobile: "/videos/mebelfix-mobile.mp4",
   },
 ];
 
@@ -92,34 +99,16 @@ export default function Portfolio() {
                 }
               }}
             >
-              {/* Project image */}
-              <div
-                className={`h-56 bg-gradient-to-br ${project.color} relative overflow-hidden`}
-              >
-                {project.image ? (
-                  <>
-                    <img
-                      src={project.image}
-                      alt={`${project.title} — ${project.type} разработка от Neirologic Team`}
-                      loading="lazy"
-                      width={600}
-                      height={224}
-                      className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </>
-                ) : (
-                  <>
-                    <div className="absolute inset-0 bg-grid opacity-30" />
-                    <div className="absolute top-6 right-6 w-20 h-20 rounded-2xl bg-white/5 rotate-12 group-hover:rotate-45 transition-transform duration-700" />
-                    <div className="absolute bottom-6 left-6 w-16 h-16 rounded-full bg-white/5 group-hover:scale-150 transition-transform duration-700" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                      <span className={`text-4xl font-black ${project.accentColor} opacity-30`}>
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
-                  </>
-                )}
+              {/* Project device mockup */}
+              <div className="relative">
+                <DeviceMockup
+                  video={"video" in project ? project.video : undefined}
+                  videoMobile={"videoMobile" in project ? project.videoMobile : undefined}
+                  image={"image" in project ? project.image : undefined}
+                  title={project.title}
+                  color={project.color}
+                  accentColor={project.accentColor}
+                />
                 {/* Type badge + beta */}
                 <div className="absolute top-4 left-4 z-10 flex gap-2">
                   <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-black/40 backdrop-blur-sm text-white">
@@ -131,7 +120,7 @@ export default function Portfolio() {
                     </span>
                   )}
                 </div>
-                {/* External link icon — only for projects with URL */}
+                {/* External link icon */}
                 {"url" in project && project.url && (
                   <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
