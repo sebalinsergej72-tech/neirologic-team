@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
   { href: "#services", label: "Услуги" },
@@ -10,6 +11,7 @@ const navLinks = [
   { href: "#about", label: "Почему мы" },
   { href: "#process", label: "Процесс" },
   { href: "#faq", label: "FAQ" },
+  { href: "/blog", label: "Блог", isPage: true },
 ];
 
 export default function Header() {
@@ -73,15 +75,25 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav aria-label="Основная навигация" className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className="relative px-3.5 py-1.5 text-sm text-white/60 hover:text-white rounded-xl hover:bg-white/[0.06] transition-all duration-300"
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            "isPage" in link && link.isPage ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative px-3.5 py-1.5 text-sm text-white/60 hover:text-white rounded-xl hover:bg-white/[0.06] transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className="relative px-3.5 py-1.5 text-sm text-white/60 hover:text-white rounded-xl hover:bg-white/[0.06] transition-all duration-300"
+              >
+                {link.label}
+              </button>
+            )
+          )}
         </nav>
 
         {/* CTA button */}
@@ -139,15 +151,26 @@ export default function Header() {
             }}
           >
             <div className="flex flex-col items-center gap-1 py-4 px-2">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className="w-full py-2.5 text-white/60 hover:text-white hover:bg-white/[0.06] rounded-xl transition-all text-sm"
-                >
-                  {link.label}
-                </button>
-              ))}
+              {navLinks.map((link) =>
+                "isPage" in link && link.isPage ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="w-full py-2.5 text-white/60 hover:text-white hover:bg-white/[0.06] rounded-xl transition-all text-sm text-center"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollTo(link.href)}
+                    className="w-full py-2.5 text-white/60 hover:text-white hover:bg-white/[0.06] rounded-xl transition-all text-sm"
+                  >
+                    {link.label}
+                  </button>
+                )
+              )}
               <div className="w-full h-px bg-white/5 my-1" />
               <button
                 onClick={() => scrollTo("#contact")}
